@@ -3,6 +3,6 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-  <div>404 page not found</div>
+  <div>404 page not found wala practice</div>
   );
 }
