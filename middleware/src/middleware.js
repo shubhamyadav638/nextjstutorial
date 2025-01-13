@@ -1,11 +1,10 @@
 import { NextResponse } from "next/server";
 
-
-export default function Middleware(request) {
-
-
+export function middleware(request){
     // terminal console me dikhega ye req and res se pahle chlega
-    // console.log(" Shubham")
+ // console.log(" Shubham")
+
+
 
 // // kisi page ko acsses kare to wo login par redirect kar de 
 // return NextResponse.redirect(new URL ("/login", request.url))
@@ -13,27 +12,27 @@ export default function Middleware(request) {
  // This page isn’t working localhost redirected you too many times
 
 
-
-
+ 
 // solve many times redirection 
 
     // // kisi page ko acsses kare to wo login par redirect kar de 
      
-    //  if (request.nextUrl.pathname!= "/login") {
-       return NextResponse.redirect(new URL ("/login", request.url))
-    //  }
-
-
-
-
-  
+    // if (request.nextUrl.pathname!= "/login") {
+    //     return NextResponse.redirect(new URL ("/login", request.url))
+    //   }
 
     
-        
-  
-}
-  //only ek ek page ko redirect karne ke liye aise karenge 
 
-  export const config={
-    matccher:"/about/path*"
-  }
+    // if(request.nextUrl.pathname!="/login"){
+     return NextResponse.redirect(new URL("/login",request.url))
+    // }
+
+}
+
+export const config={
+    // matcher:["/about/:path*", "/studentlist/:path*"]
+
+    //only aboutstudent redirect
+
+    matcher:["/about/aboutstudent/:path*"]
+}
